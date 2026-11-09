@@ -1,0 +1,51 @@
+[
+  {
+    "id": "bob",
+    "name": "Bob Okonkwo",
+    "title": "Software Engineer",
+    "department": "engineering",
+    "role": "employee"
+  },
+  {
+    "id": "alice",
+    "name": "Alice Chen",
+    "title": "HR Manager",
+    "department": "hr",
+    "role": "manager"
+  },
+  {
+    "id": "dave",
+    "name": "Dave Alvarez",
+    "title": "HR Coordinator",
+    "department": "hr",
+    "role": "employee"
+  },
+  {
+    "id": "carol",
+    "name": "Carol Singh",
+    "title": "Engineering Manager",
+    "department": "engineering",
+    "role": "manager"
+  },
+  {
+    "id": "eve",
+    "name": "Eve Novak",
+    "title": "Accountant",
+    "department": "finance",
+    "role": "employee"
+  },
+  {
+    "id": "frank",
+    "name": "Frank Müller",
+    "title": "Finance Manager",
+    "department": "finance",
+    "role": "manager"
+  },
+  {
+    "id": "nina",
+    "name": "Nina Petrov",
+    "title": "Chief Executive",
+    "department": "executive",
+    "role": "manager"
+  }
+]

@@ -1,0 +1,30 @@
+# Hearth HR — document access for the privacy-aware assistant.
+#
+# A user can view a document when any of these is true:
+#   1. they are the owner
+#   2. they are a member of a department linked to the document
+#      (member = employee or the manager role)
+#   3. they hold the manager role on a department linked via manager_department
+#   4. a direct viewer tuple names them, a userset, or user:*
+#
+# Salary bands use (3) only, so an HR employee is not enough: the user must
+# hold the manager role on HR. The handbook uses (2) for every department,
+# which is every employee, not the public.
+
+model
+  schema 1.1
+
+type user
+
+type department
+  relations
+    define employee: [user]
+    define manager: [user]
+    define member: employee or manager
+
+type document
+  relations
+    define owner: [user]
+    define department: [department]
+    define manager_department: [department]
+    define viewer: [user, user:*, department#member, department#manager] or owner or member from department or manager from manager_department
