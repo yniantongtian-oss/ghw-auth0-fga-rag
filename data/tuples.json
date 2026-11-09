@@ -1,0 +1,32 @@
+[
+  {"user": "user:alice", "relation": "manager", "object": "department:hr"},
+  {"user": "user:dave", "relation": "employee", "object": "department:hr"},
+  {"user": "user:bob", "relation": "employee", "object": "department:engineering"},
+  {"user": "user:carol", "relation": "manager", "object": "department:engineering"},
+  {"user": "user:eve", "relation": "employee", "object": "department:finance"},
+  {"user": "user:frank", "relation": "manager", "object": "department:finance"},
+  {"user": "user:nina", "relation": "manager", "object": "department:executive"},
+
+  {"user": "department:hr", "relation": "department", "object": "document:employee_handbook"},
+  {"user": "department:engineering", "relation": "department", "object": "document:employee_handbook"},
+  {"user": "department:finance", "relation": "department", "object": "document:employee_handbook"},
+  {"user": "department:executive", "relation": "department", "object": "document:employee_handbook"},
+
+  {"user": "department:hr", "relation": "department", "object": "document:pto_and_leave"},
+  {"user": "department:engineering", "relation": "department", "object": "document:pto_and_leave"},
+  {"user": "department:finance", "relation": "department", "object": "document:pto_and_leave"},
+  {"user": "department:executive", "relation": "department", "object": "document:pto_and_leave"},
+
+  {"user": "department:engineering", "relation": "department", "object": "document:engineering_onboarding"},
+  {"user": "department:hr", "relation": "department", "object": "document:hr_recruiting_playbook"},
+
+  {"user": "department:hr", "relation": "manager_department", "object": "document:salary_bands_2026"},
+  {"user": "department:engineering", "relation": "manager_department", "object": "document:engineering_comp_exceptions"},
+
+  {"user": "department:hr#manager", "relation": "viewer", "object": "document:performance_review_rubric"},
+  {"user": "department:engineering#manager", "relation": "viewer", "object": "document:performance_review_rubric"},
+  {"user": "department:finance#manager", "relation": "viewer", "object": "document:performance_review_rubric"},
+  {"user": "department:executive#manager", "relation": "viewer", "object": "document:performance_review_rubric"},
+
+  {"user": "user:nina", "relation": "owner", "object": "document:succession_notes"}
+]

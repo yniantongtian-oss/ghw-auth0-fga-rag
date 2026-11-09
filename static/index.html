@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Hearth — Northline HR</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <a class="skip" href="#question">Skip to the question</a>
+  <header class="mast">
+    <div class="mast-inner">
+      <div class="brand">
+        <span class="stamp" aria-hidden="true">NL</span>
+        <div>
+          <p class="brand-name">Hearth</p>
+          <p class="brand-sub">Northline People</p>
+        </div>
+      </div>
+      <p class="mast-note" id="backend-note">Document access is checked before any answer is written.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="rail" aria-label="Your access">
+      <section class="card" id="identity-card">
+        <p class="eyebrow">Signed in</p>
+        <div id="identity">
+          <p class="muted">Choose who you are. The directory label is not the permission; OpenFGA is.</p>
+        </div>
+      </section>
+
+      <section class="card" id="switcher-card">
+        <p class="eyebrow">Dev user switcher</p>
+        <div class="switcher" id="switcher" role="group" aria-label="Demo employees"></div>
+        <p class="fine" id="auth0-slot"></p>
+      </section>
+
+      <section class="card">
+        <p class="eyebrow">Library you can open</p>
+        <p class="fine" id="library-count">Sign in to see the documents list-objects returns for you.</p>
+        <ul class="library" id="library"></ul>
+      </section>
+    </aside>
+
+    <section class="desk">
+      <ol class="steps" aria-label="How an answer is produced">
+        <li>Search the full index</li>
+        <li>FGA batch check and list objects</li>
+        <li>Answer from allowed text only</li>
+      </ol>
+
+      <div class="ask-card">
+        <label for="question">Ask about policy, leave, hiring, or pay</label>
+        <textarea id="question" rows="3" placeholder="What is the L6 engineering base salary band?"></textarea>
+        <div class="ask-row">
+          <button type="button" class="primary" id="ask">Check access and answer</button>
+          <p class="fine" id="status" role="status"></p>
+        </div>
+        <div class="prompts" id="prompts">
+          <button type="button" data-q="What is the L6 engineering base salary band?">L6 salary band</button>
+          <button type="button" data-q="How many vacation days do full-time employees receive?">Vacation days</button>
+          <button type="button" data-q="What is the engineering badge code?">Engineering badge</button>
+          <button type="button" data-q="What retention grant can a staff engineer receive?">Retention grant</button>
+          <button type="button" data-q="What happens if Nina Petrov is unavailable for more than 30 days?">Succession</button>
+        </div>
+      </div>
+
+      <article class="answer-card" id="answer-card" hidden>
+        <p class="eyebrow">Answer</p>
+        <div id="answer" aria-live="polite"></div>
+        <div id="citations"></div>
+      </article>
+
+      <section class="trace-card" id="trace-card" hidden>
+        <div class="trace-head">
+          <p class="eyebrow">Access trace</p>
+          <p class="fine">The index runs first. Withheld rows never enter the answer. Not-quoted rows were allowed, then dropped as a weak match.</p>
+        </div>
+        <div id="trace"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Sample HR files and salary figures are fictional. The prompt is not the lock. FGA is.</p>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
